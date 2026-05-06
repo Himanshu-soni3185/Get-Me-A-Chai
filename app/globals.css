@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+
+.button-hover-active:hover {
+  @apply hover:scale-105;
+}
+.button-hover-active:active {
+  @apply active:translate-y-1;
+}
+
+*{
+  box-sizing: border-box;
+}
