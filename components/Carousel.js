@@ -23,17 +23,17 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="w-[80%] flex place-self-center overflow-hidden rounded-xl">
+    <div className="w-full overflow-hidden rounded-xl">
       <div
         ref={trackRef}
-        className="flex bg-[#EFDFC4] transition-transform duration-800 ease-in-out"
+        className="flex transition-transform duration-800 ease-in-out"
         style={{
-          width: `${(slides.length)*100}%`,
-          transform: `translateX(-${index * (100)}%)`,
+          width: `${slides.length * 100}%`,
+          transform: `translateX(-${index * (100 / slides.length)}%)`,
         }}
       >
         {slides.map((slide) => (
-          <div key={slide.id} className="w-full shrink-0 bg-[#EFDFC4] ">
+          <div key={slide.id} style={{ width: `${100 / slides.length}%` }} className="shrink-0 flex justify-center px-2">
             <Card
               text={slide.text}
               community={slide.community}
